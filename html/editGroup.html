@@ -1,0 +1,24 @@
+<div id="confirmAdd" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Potwierdzenie</h4>
+			</div>
+			<!--<div class="modal-body" ng-bind="ctrl.confirm.text"/>-->
+			<div class="modal-body" ng-if="(ctrl.groupTemp.groupId==null)">
+				Dołącz do grupy?
+				<button class="btn btn-primary glyphicon glyphicon-plus"  ng-click="ctrl.addUserToGroup(ctrl.getIdGruop._id)"/>
+			</div>
+			
+			<div class="modal-body" ng-if="(ctrl.groupTemp.groupId!=null)">
+				Opuść grupę?
+				<button class="btn btn-danger glyphicon glyphicon-remove" ng-click="ctrl.deleteUserGroup(ctrl.getIdGruop._id)"/>
+			</div>
+            
+			<div class="modal-footer">
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+[
+	{ "$sort": { "dateAdd": -1 } },
+	
+	{ "$lookup": { "from": "persons", "localField": "authorId", "foreignField": "_id", "as": "author" } },
+	{ "$lookup": { "from": "groups", "localField": "groupIds", "foreignField": "_id", "as": "groups" } }
+	
+]
+

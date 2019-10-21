@@ -1,0 +1,52 @@
+<div id="dialogMessages" class="modal fade" role="dialog">
+
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<button class="btn btn-default" ng-click="ctrl.deleteUserGroup(ctrl.getMessageId.groupId)">Opuść grupę</button>
+				<h4 class="modal-title"></h4>
+			</div>
+			
+			
+			<!-- <div class="modal-body" ng-bind="ctrl.getMessageId.groupId"/><div class="modal-body" ng-bind="ctrl.confirm.text"/>-->
+            <div class="modal-body">
+            <form name="sendMessage" class="mt-3" ng-submit="ctrl.sendMessage(ctrl.getMessageId.groupId)">
+				
+				<label for="Wiadomosc">Wiadomosc</label>
+				<!--<input id="comment" type="textarea" ng-model="ctrl.person.firstName" class="form-control" required="" placeholder="napisz cos"/>-->	
+				<textarea id="comment" name="comment" class="form-control" rows="5" form="sendMessage" ng-model="ctrl.message.content" placeholder="napisz coś..."></textarea>
+				<button type="submit" class="btn btn-default"  ng-disabled="sendMessage.$invalid">Wyślij</button>	
+                
+			
+		    </form>
+
+			<div class="modal-body" >
+			<button class="btn btn-default btn-sm" ng-click="ctrl.prev()" ng-disabled="ctrl.nSkip < 5"><span class="glyphicon glyphicon-chevron-left"></span> </button>
+			<span ng-bind="ctrl.nSkip+1"></span>-<span  ng-bind="ctrl.nSkip + ctrl.nLimit  >= ctrl.count ? ctrl.count  : ctrl.nSkip + ctrl.nLimit  "></span> 
+           <!-- <span ng-bind="ctrl.count"></span> of
+            <span  ng-bind="ctrl.countTotal"></span>-->
+			<button class="btn btn-default btn-sm" ng-click="ctrl.next()" ng-disabled="ctrl.nSkip +5 >= ctrl.count"><span class="glyphicon glyphicon-chevron-right"></button>
+			
+            </div class="modal-body">
+			
+
+            <div class="modal-body">
+            <table class="table table-stripped table-hover">
+                <tbody class="tbody-default">
+                            <tr ng-repeat="messages in ctrl.messages">
+                                <td ng-bind="messages.author[0].firstName+ ' ' +messages.author[0].lastName"></td>
+                                <td ng-bind="messages.dateAdd"></td>
+                                <td ng-bind="messages.content"></td>
+                               <!-- <td ng-bind="messages._id" scope="row" style="width: 1px"></td>-->
+                                
+                            </tr>
+                </tbody>
+            </table>
+            </div>
+			<div class="modal-footer">
+            
+			</div>
+		</div>
+	</div>
+</div>

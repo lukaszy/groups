@@ -1,0 +1,30 @@
+<div class="row col-xs-12">
+	<h3>Grupy</h3>
+	<ng-include src="'/html/editGroup.html'"></ng-include>
+	<div style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); text-align: center; width: 500px; max-width=80%; z-index: 10000">
+        <uib-alert class="animated" type="{{ctrl.alert.type}}" close="ctrl.closeAlert()" dismiss-on-timeout="2000" ng-if="ctrl.alert.text">{{ctrl.alert.text}}</uib-alert>
+    </div>
+	<table class="table table-stripped table-hover">
+					
+						<thead class="thead-default">
+						<tr>
+							<!--<th><button class="btn btn-primary glyphicon glyphicon-plus" ng-click="ctrl.edit()"/></th>-->
+							<th>ID</th>
+							<th>Nazwa grupy</th>
+						</tr>
+						</thead>
+						
+						<tbody class="tbody-default">
+						<tr ng-repeat="groups in ctrl.groups" ng-click="ctrl.edit(groups._id)">
+							<td ng-bind="groups._id" scope="row" style="width: 1px"></td>
+							<td ng-bind="groups.name"></td>							
+						</tr>
+						<!--<button ng-if="(ctrl.groupTemp.groupId!=null)"></button>-->
+						</tbody>	
+					</table>
+
+    </div>
+		
+
+
+</div>

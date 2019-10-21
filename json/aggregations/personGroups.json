@@ -1,0 +1,6 @@
+[
+	{ "$sort": {  "name": 1 } },
+
+	{ "$lookup": { "from": "groups", "localField": "groupId", "foreignField": "_id", "as": "groupsFK" } },
+	{ "$lookup": { "from": "persons", "localField": "personId", "foreignField": "_id", "as": "personsFK" } }
+]

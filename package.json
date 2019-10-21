@@ -1,0 +1,24 @@
+{
+  "name": "routing-menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular-animate": "^1.7.6",
+    "cookies": "^0.7.3",
+    "merge": "^1.2.1",
+    "mime": "^2.4.0",
+    "mongodb": "^3.1.13",
+    "mongojs": "^2.6.0",
+    "uuid": "^3.3.2",
+    "websocket": "^1.0.28",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
